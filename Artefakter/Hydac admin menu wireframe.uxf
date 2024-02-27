@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>120</y>
+      <w>120</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>bg=black
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>270</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+Markus Grønquist</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>150</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>StartDate
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>190</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SlutDate</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>150</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>One Off 68%
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>150</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Montering 99%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>150</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Lager 88%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>150</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Køkken 9%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>180</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Modtagelse 20%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>180</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Udvikling 82%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>180</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Salg 73%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>180</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Marketing 69%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>560</y>
+      <w>520</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>270</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+79%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>270</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+8%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>240</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Navn
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>240</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Trivsel
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>240</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Fravær
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>240</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Kommentarer
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>270</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>300</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+12
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>300</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+30%
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>300</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+10%
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>300</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+Emil Albrechtsen
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>270</y>
+      <w>130</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>300</y>
+      <w>130</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>300</y>
+      <w>130</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>300</y>
+      <w>130</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>560</y>
+      <w>520</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Emil Albrechtsen
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>620</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+14-02-2024</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>620</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Grøn</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>620</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>120</y>
+      <w>520</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Afdelinger
+bg=gray
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>210</y>
+      <w>520</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+One Off Medarbejderer
+bg=cyan
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>680</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>680</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Grøn</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>680</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+16-02-2024</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>590</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+LoginDato
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>590</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Humør
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>650</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>740</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>740</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Grøn</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>740</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+18-02-2024</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>710</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+17-02-2024</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>710</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Rød</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>710</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Familiemedlem er afkommet</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>800</y>
+      <w>260</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>800</y>
+      <w>130</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Grøn</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>800</y>
+      <w>120</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>halign=left
+20-02-2024</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>770</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+19-02-2024</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>770</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Rød</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>770</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>650</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+15-02-2024</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>650</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Grøn</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>590</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+Kommentarer
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>330</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+Markus Grønquist</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>330</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+8%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>330</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+79%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>330</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>360</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+Markus Grønquist</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>360</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+8%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>360</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+79%
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>360</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>260</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SøgPåTrivsel</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>270</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Pop-up
+-
+style=wordwrap
+Emil Albrechtsen's trivsel i afdeling One Off er under 10% 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>300</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SøgPåFravær</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>120</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Periode
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>230</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Parameter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>390</y>
+      <w>120</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>halign=center
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
