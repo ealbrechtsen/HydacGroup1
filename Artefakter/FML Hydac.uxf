@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>189</y>
+      <w>216</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+Kunder og leverandøre. Derudover har Hydac som A/S virksomhed en række investorer 
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>279</x>
+      <y>189</y>
+      <w>216</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+Hydac som virksomhed dækker alle de 3 hovedpunkter i form af produktion, Problemløsning og platform/netværk
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>279</x>
+      <y>432</y>
+      <w>216</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+Menneskelige ressourcer i form medarbejdere
+
+Immerterielle ressourcer i form a design, patenter og marketing
+
+Fysiske ressourcer i form af maskiner, materialer, lager, bygninger...
+
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>495</x>
+      <y>189</y>
+      <w>216</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+tilbyder bæredygtige produkter skreddersyet til den enkelte kunde
+
+Hydac tilbyder produkter inde for hydraulik, systemer, væsketeknik
+
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>711</x>
+      <y>432</y>
+      <w>216</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+Distribuerer ved hjælp af egne sælgere
+Gør stor brug af marketing og reklame(digitale platforme)
+Gør brug af alle kommunikationsformer(mundlig, skriftlig, elektronisk)
+
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>711</x>
+      <y>189</y>
+      <w>216</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+
+Hydac tilbyder skræddersyede løsninger hvilket øger kunde-fastholdelse
+
+De gør brug af "Fælles Udvikling" princippet inde for Kundehvervning i form af at involvere kunde i produktudvikling
+
+De gør brug af "Personlig Betjening"
+
+Spørge om Mersalg-Opsalg
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>927</x>
+      <y>189</y>
+      <w>216</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+Hydac har et segmenteret marked
+same pains, forskellige sulutions og forskellige kanaler
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>657</y>
+      <w>540</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+Her gør hydac brug af en værdi drevet forretningsmodel
+Faste: Service aftaler, regninger
+Variable: Produktion
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>603</x>
+      <y>657</y>
+      <w>540</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>halign=center
+valign=center
+style=wordwrap
+Gentagende indtægter(abbonoment/periodisk betaling) i form af service kontrakter
+Engangsindtægt i form af Salg af produkt(salg af værdi)
+	
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>279</x>
+      <y>189</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Nøgleaktiviteter
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>279</x>
+      <y>432</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Nøgleressourcer
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>63</x>
+      <y>189</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Nøglepartnere
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>495</x>
+      <y>189</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Værditilbud
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>711</x>
+      <y>189</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Kunderelationer
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>927</x>
+      <y>189</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Kundesegmenter
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>603</x>
+      <y>657</y>
+      <w>540</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Indtægtsstrømme
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>63</x>
+      <y>657</y>
+      <w>540</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Omkostningsstruktur
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>711</x>
+      <y>432</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+halign=center
+fontsize=20
+Kanaler
+-.
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>423</x>
+      <y>135</y>
+      <w>360</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>fontsize=24
+Forretningsmodellærred(FML)
+halign=center
+valign=center
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
