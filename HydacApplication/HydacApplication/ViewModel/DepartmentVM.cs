@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HydacApplication.ViewModel
 {
-    internal class DepartmentVM
+    public class DepartmentVM
     {
     }
 }

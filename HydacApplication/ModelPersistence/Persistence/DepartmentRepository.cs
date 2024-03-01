@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace HydacApplication.Persistence
+namespace ModelPersistence.Persistence
 {
-    internal class DepartmentRepository
+    public class DepartmentRepository
     {
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HydacApplication.Persistence
+namespace ModelPersistence.Model
 {
-    internal class EmployeeRepository
+    public class Department
     {
     }
 }
