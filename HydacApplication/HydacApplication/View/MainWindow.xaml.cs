@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using HydacApplication.View;
+using HydacApplication.ViewModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +18,18 @@ namespace HydacApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        private CreateEmployeeDialog cmd;
         public MainWindow()
         {
             InitializeComponent();
+            MainViewModel mvm = new MainViewModel();
+            DataContext = mvm;
+        }
+
+        private void CreateEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            cmd = new CreateEmployeeDialog(mvm);
+            cmd.ShowDialog();
         }
     }
 }
