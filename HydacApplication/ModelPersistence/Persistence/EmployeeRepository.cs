@@ -11,5 +11,10 @@ namespace ModelPersistence.Persistence
 {
     public class EmployeeRepository
     {
+
+
+        // ** constructor **
+        //IConfigurationRoot config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+        //string? ConnectionString = config.GetConnectionString("MyDBConnection");
     }
 }
