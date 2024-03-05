@@ -8,5 +8,12 @@ namespace ModelPersistence.Model
 {
     public class Department
     {
+        public string Name;
+        
+
+        public Department(string Name) 
+        { 
+            this.Name = Name;
+        }
     }
 }
