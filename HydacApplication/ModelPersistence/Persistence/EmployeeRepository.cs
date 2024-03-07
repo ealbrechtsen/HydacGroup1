@@ -24,12 +24,19 @@ namespace ModelPersistence.Persistence
             connectionstring = configuration.GetConnectionString("MyDBconnection");
             employees = new List<Employee>();
         }
-        public void Add()
+        public void Add(Employee employee)
         {
             using(SqlConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEE(FirstName, LastName, )", connection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEE(FirstName, LastName, CPRNum, PhoneNum, Email, Address)"+"VALUES(@FirstName, @LastName, @CPRNum, @PhoneNum, @Email, @Address", connection);
+                cmd.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = employee.Lastname;
+                cmd.Parameters.Add("@CPRNum", SqlDbType.NVarChar).Value = employee.CPRNum;
+                cmd.Parameters.Add("@PhoneNum", SqlDbType.NVarChar).Value = employee.PhoneNum;
+                cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = employee.Email;
+                cmd.Parameters.Add("@Address", SqlDbType.NVarChar).Value = employee.Address;
+                cmd.ExecuteNonQuery();
+                employees.Add(employee);
             }
         }
 

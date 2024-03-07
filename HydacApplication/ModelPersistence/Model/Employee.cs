@@ -8,7 +8,7 @@ namespace ModelPersistence.Model
 {
     public class Employee
     {
-        public string Firstname;
+        public string FirstName;
         public string Lastname;
         public string CPRNum;
         public string PhoneNum;
@@ -18,7 +18,7 @@ namespace ModelPersistence.Model
         
         public Employee(string FirstName, string LastName, string CPRNum, string PhoneNum, string Email, string Address)
         {
-            this.Firstname = FirstName;
+            this.FirstName = FirstName;
             this.Lastname = LastName;
             this.CPRNum = CPRNum;
             this.PhoneNum = PhoneNum;
