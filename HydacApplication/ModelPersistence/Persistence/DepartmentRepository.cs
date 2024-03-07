@@ -13,19 +13,28 @@ using ModelPersistence.Model;
 
 namespace ModelPersistence.Persistence
 {
-    public class DepartmentRepository // IRepository
+    public class DepartmentRepository : IRepository<Department>
     {
         private List<Department> departments;
+        public IConfigurationRoot configuration;
+        private string? connectionstring;
 
         public DepartmentRepository() 
         {
-            IConfigurationRoot config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-            string? ConnectionString = config.GetConnectionString("MyDBConnection");
+            
+            configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            connectionstring = configuration.GetConnectionString("MyDBconnection");
         }
          
         public void Add (Department department)
         {
-            departments.Add(department);
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO DEPARTMENT(Name)+VALUES(@Name)", connection);
+                cmd.ExecuteNonQuery();
+                departments
+            }
         }
         //public void Add(Subject subject)
         //{

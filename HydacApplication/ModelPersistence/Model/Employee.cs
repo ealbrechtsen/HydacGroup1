@@ -8,18 +8,18 @@ namespace ModelPersistence.Model
 {
     public class Employee
     {
-        public string Firstname;
-        public string Lastname;
+        public string FirstName;
+        public string LastName;
         public string CPRNum;
         public string PhoneNum;
         public string Email;
         public string Address;
-        public string EmploymentStatus;
+        public bool EmploymentStatus;
         
         public Employee(string FirstName, string LastName, string CPRNum, string PhoneNum, string Email, string Address)
         {
-            this.Firstname = FirstName;
-            this.Lastname = LastName;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
             this.CPRNum = CPRNum;
             this.PhoneNum = PhoneNum;
             this.Email = Email;

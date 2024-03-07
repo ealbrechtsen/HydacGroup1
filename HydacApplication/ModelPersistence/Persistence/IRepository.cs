@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Configuration.Json;
+using ModelPersistence.Model;
 
 namespace ModelPersistence.Persistence
 {
-    public interface IRepository
+    public interface IRepository<T>
     {
-        void Add();
+        public void Add(T t);
+
     }
 }
