@@ -33,19 +33,8 @@ namespace ModelPersistence.Persistence
                 connection.Open();
                 SqlCommand cmd = new SqlCommand("INSERT INTO DEPARTMENT(Name)+VALUES(@Name)", connection);
                 cmd.ExecuteNonQuery();
-                departments
+                departments.Add(department);
             }
         }
-        //public void Add(Subject subject)
-        //{
-        //    using (SqlConnection connection = new SqlConnection(connectionstring))
-        //    {
-        //        connection.Open();
-        //        SqlCommand cmd = new SqlCommand("INSERT INTO SUBJECT(Name)" + "VALUES(@Name)", connection);
-        //        cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = subject.Name;
-        //        cmd.ExecuteNonQuery();
-        //        subjects.Add(subject);
-        //    }
-        //}
     }
 }
