@@ -18,12 +18,21 @@ namespace HydacApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        private CreateDepartmentDialog cdd;
         private CreateEmployeeDialog cmd;
+        private MainViewModel mvm;
         public MainWindow()
         {
             InitializeComponent();
-            MainViewModel mvm = new MainViewModel();
+            mvm = new MainViewModel();
             DataContext = mvm;
+        }
+
+
+        private void CreateDepartment_Click(object sender, RoutedEventArgs e)
+        {
+            cdd = new CreateDepartmentDialog(mvm);
+            cdd.ShowDialog();
         }
 
         private void CreateEmployee_Click(object sender, RoutedEventArgs e)
