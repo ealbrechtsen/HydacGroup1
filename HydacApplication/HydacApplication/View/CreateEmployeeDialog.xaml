@@ -5,8 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HydacApplication.View"
         mc:Ignorable="d"
-        Title="CreateEmployeeDialog" Height="450" Width="800">
+        Title="CreateEmployeeDialog" Height="400" Width="600">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Labels and TextBoxes -->
+        <StackPanel Grid.Column="0" Margin="10">
+            <Label Content="First Name:" />
+            <TextBox x:Name="txtFirstName" />
+
+            <Label Content="Last Name:" />
+            <TextBox x:Name="txtLastName" />
+
+            <Label Content="CPR Number:" />
+            <TextBox x:Name="txtCPRNum"/>
+
+            <Label Content="Phone Number:" />
+            <TextBox x:Name="txtPhoneNum" />
+
+            <Label Content="Email:" />
+            <TextBox x:Name="txtEmail" />
+
+            <Label Content="Address:" />
+            <TextBox x:Name="txtAddress" />
+        </StackPanel>
+
+        <!-- Department ComboBox -->
+        <StackPanel Grid.Column="1" Margin="10">
+            <Label Content="Department:" />
+            <ComboBox x:Name="cmbDepartment" ItemsSource="{Binding departmentsVM}" SelectedItem="{Binding SelectedDepartment}">
+                <!-- Add ComboBox items here -->
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Return and Create Buttons -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+            <Button x:Name="CreateEmployee" Content="Opret" Width="100" Margin="0,0,10,0" Click="CreateEmployee_Click"/>
+            <Button x:Name="Return" Content="Tilbage" Width="100" Click="Return_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

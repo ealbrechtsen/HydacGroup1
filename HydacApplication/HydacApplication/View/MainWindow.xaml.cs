@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HydacApplication
+namespace HydacApplication.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -39,6 +39,11 @@ namespace HydacApplication
         {
             cmd = new CreateEmployeeDialog(mvm);
             cmd.ShowDialog();
+        }
+
+        private void CloseProgram_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }

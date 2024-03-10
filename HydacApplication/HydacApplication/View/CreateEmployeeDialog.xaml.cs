@@ -23,8 +23,19 @@ namespace HydacApplication.View
         MainViewModel mvm;
         public CreateEmployeeDialog(MainViewModel mvm)
         {
-            this.mvm = mvm;
             InitializeComponent();
+            this.mvm = mvm;
+            DataContext = mvm;
+        }
+        private void CreateEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            mvm.CreateEmployee(txtFirstName.Text, txtLastName.Text, txtCPRNum.Text, txtPhoneNum.Text, txtEmail.Text, txtAddress.Text, mvm.SelectedDepartment);
+            this.DialogResult = true;
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }

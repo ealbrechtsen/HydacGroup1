@@ -26,5 +26,16 @@ namespace HydacApplication.View
             this.mvm = mvm;
             InitializeComponent();
         }
+
+        private void CreateDepartment_Click(object sender, RoutedEventArgs e)
+        {
+            mvm.CreateDepartment(txtDepartmentName.Text);
+            this.DialogResult = true;
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
     }
 }
