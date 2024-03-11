@@ -15,26 +15,49 @@ namespace ModelPersistence.Persistence
 {
     public class DepartmentRepository : IRepository<Department>
     {
-        private List<Department> departments;
-        public IConfigurationRoot configuration;
-        private string? connectionstring;
+        private List<Department> departments = new List<Department>();
 
-        public DepartmentRepository() 
+        public DepartmentRepository()
         {
-            
-            configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-            connectionstring = configuration.GetConnectionString("MyDBconnection");
+            // When DepartmentRepository is instantiated, the Department list becomes instantiated and populated with department objects from the database.
+            //departments = new List<Department>();
+            using (SqlConnection con = new SqlConnection(RepositoryHelper.connectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Name FROM DEPARTMENT", con);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Department department = new Department(reader["Name"].ToString());
+                        departments.Add(department);
+                    }
+                }
+            }
         }
          
         public void Add (Department department)
         {
-            using (SqlConnection connection = new SqlConnection(connectionstring))
+            // Adds a Department objekt to the list and to the database.
+            using (SqlConnection connection = new SqlConnection(RepositoryHelper.connectionString))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO DEPARTMENT(Name)+VALUES(@Name)", connection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO DEPARTMENT(Name)" + "VALUES(@Name)", connection);
+                cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = department.Name;
                 cmd.ExecuteNonQuery();
                 departments.Add(department);
+
             }
+        }
+        public Department GetDepartment(string name)
+        {
+            // Returns a Department with the given name.
+            return departments.Find(department => department.Name == name);
+        }
+        public List<Department> GetDepartments()
+        {
+            // Returns the Department list.
+            return departments;
         }
     }
 }

@@ -20,11 +20,23 @@ namespace HydacApplication.View
     /// </summary>
     public partial class CreateDepartmentDialog : Window
     {
-        MainViewModel mvm;
+        private MainViewModel mvm;
         public CreateDepartmentDialog(MainViewModel mvm)
         {
             this.mvm = mvm;
             InitializeComponent();
+            this.DataContext = mvm;
+        }
+
+        private void CreateDepartment_Click(object sender, RoutedEventArgs e)
+        {
+            mvm.CreateDepartment(txtDepartmentName.Text);
+            this.DialogResult = true;
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }
