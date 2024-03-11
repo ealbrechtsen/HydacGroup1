@@ -23,9 +23,9 @@ namespace HydacApplication.View
         private MainViewModel mvm;
         public MainWindow()
         {
-            InitializeComponent();
             mvm = new MainViewModel();
-            DataContext = mvm;
+            this.DataContext = mvm;
+            InitializeComponent();
         }
 
 
@@ -43,7 +43,7 @@ namespace HydacApplication.View
 
         private void CloseProgram_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            Application.Current.Shutdown();
         }
     }
 }

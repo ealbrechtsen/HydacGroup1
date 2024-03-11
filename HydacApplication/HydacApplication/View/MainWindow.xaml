@@ -29,7 +29,7 @@
             
             <TextBlock Grid.Row="0" Text="Medarbejdere" Margin="10" FontSize="18"/>
 
-            <ListView Grid.Row="0" Margin="5,35,5,0" BorderBrush="Gray" BorderThickness="1" ItemsSource="{Binding EmployeesVM}" SelectedItem="{Binding SelectedEmployee}">
+            <ListView Grid.Row="0" Margin="5,35,5,0" BorderBrush="Gray" BorderThickness="1" ItemsSource="{Binding employeesVM}" SelectedItem="{Binding SelectedEmployee}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Fornavn" Width="100" DisplayMemberBinding="{Binding FirstName}"/>
@@ -41,9 +41,6 @@
                         <GridViewColumn Header="Afdeling" Width="100" DisplayMemberBinding="{Binding Department}"/>
                     </GridView>
                 </ListView.View>
-                <ListViewItem>Item 1</ListViewItem>
-                <ListViewItem>Item 2</ListViewItem>
-                <ListViewItem>Item 3</ListViewItem>
             </ListView>
         </Grid>
     </Grid>

@@ -9,14 +9,13 @@ namespace HydacApplication.ViewModel
 {
     public class EmployeeVM
     {
-        public string FirstName;
-        public string LastName;
-        public string CPRNum;
-        public string PhoneNum;
-        public string Email;
-        public string Address;
-        public bool EmploymentStatus;
-        public Department Department;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string CPRNum { get; set; }
+        public string PhoneNum { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public string Department { get; set; }
 
         public EmployeeVM(Employee employee)
         {
@@ -26,8 +25,7 @@ namespace HydacApplication.ViewModel
             PhoneNum = employee.PhoneNum;
             Email = employee.Email;
             Address = employee.Address;
-            EmploymentStatus = employee.EmploymentStatus;
-            Department = employee.Department;
+            Department = employee.Department.Name;
         }
     }
 }

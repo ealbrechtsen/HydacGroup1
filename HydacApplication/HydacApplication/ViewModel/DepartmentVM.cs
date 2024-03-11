@@ -10,7 +10,7 @@ namespace HydacApplication.ViewModel
 {
     public class DepartmentVM
     {
-        public string Name;
+        public string Name { get; set; }
         public DepartmentVM(Department department)
         {
             Name = department.Name;

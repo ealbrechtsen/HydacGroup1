@@ -20,12 +20,12 @@ namespace HydacApplication.View
     /// </summary>
     public partial class CreateEmployeeDialog : Window
     {
-        MainViewModel mvm;
+        private MainViewModel mvm;
         public CreateEmployeeDialog(MainViewModel mvm)
         {
-            InitializeComponent();
             this.mvm = mvm;
-            DataContext = mvm;
+            InitializeComponent();
+            this.DataContext = mvm;
         }
         private void CreateEmployee_Click(object sender, RoutedEventArgs e)
         {
