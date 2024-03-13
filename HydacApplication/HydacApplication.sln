@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HydacApplication", "HydacApplication\HydacApplication.csproj", "{D4191949-37C2-42C3-B09D-051BFA87E9B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelPersistence", "ModelPersistence\ModelPersistence.csproj", "{3E47F59F-7A3B-4DE4-97A3-6BAFBC96B8CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelPersistence", "ModelPersistence\ModelPersistence.csproj", "{3E47F59F-7A3B-4DE4-97A3-6BAFBC96B8CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

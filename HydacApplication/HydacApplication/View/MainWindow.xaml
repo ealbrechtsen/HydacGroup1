@@ -1,12 +1,47 @@
-﻿<Window x:Class="HydacApplication.MainWindow"
+﻿<Window x:Class="HydacApplication.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HydacApplication"
+        xmlns:local="clr-namespace:HydacApplication.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="900">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
+            <Button x:Name="CreateEmployee" Content="Opret Medarbejder" Margin="0 5 0 5" Click="CreateEmployee_Click" />
+            <Button x:Name="CreateDepartment" Content="Opret Afdeling" Margin="0 5 0 5" Click="CreateDepartment_Click" />
+            <Button x:Name="CloseProgram" Content="Luk" Margin="0 350 0 5" Click="CloseProgram_Click"/>
+        </StackPanel>
+
+        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Text="Medarbejdere" Margin="10" FontSize="18"/>
+
+            <ListView Grid.Row="0" Margin="5,35,5,0" BorderBrush="Gray" BorderThickness="1" ItemsSource="{Binding employeesVM}" SelectedItem="{Binding SelectedEmployee}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Fornavn" Width="100" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="Efternavn" Width="100" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="CPR" Width="100" DisplayMemberBinding="{Binding CPRNum}"/>
+                        <GridViewColumn Header="Telefon" Width="100" DisplayMemberBinding="{Binding PhoneNum}"/>
+                        <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding Email}"/>
+                        <GridViewColumn Header="Adresse" Width="100" DisplayMemberBinding="{Binding Address}"/>
+                        <GridViewColumn Header="Afdeling" Width="100" DisplayMemberBinding="{Binding Department}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>
