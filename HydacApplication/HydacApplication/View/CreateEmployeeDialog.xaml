@@ -43,6 +43,14 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
+            <Label Content="KeyChip"/>
+            <ComboBox x:Name="cmbKeyChip" ItemsSource="{Binding keyChipsVM}" SelectedItem="{Binding SelectedKeyChip}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding KeyChipId}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </StackPanel>
 
         <!-- Return and Create Buttons -->

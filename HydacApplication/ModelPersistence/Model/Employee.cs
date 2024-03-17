@@ -8,27 +8,38 @@ namespace ModelPersistence.Model
 {
     public class Employee
     {
-        public int EmployeeId { get; set; }
+        public int EmployeeId;
         public string FirstName;
         public string LastName;
-        public string CPRNum;
-        public string PhoneNum;
-        public string Email;
-        public string Address;
-        public bool EmploymentStatus;
-        public Department Department;
-        public KeyChip KeyChip;
+        public bool EmploymentStatus {  get; set; }
+        public KeyChip KeyChip { get; set; }
+        public Department Department { get; set; }
+        private int count = 1;
         
-        public Employee(string firstName, string lastName, string cPRNum, string phoneNum, string email, string address, Department department)
+        // Constructor for reading from database
+        public Employee(int employeeId, string firstName, string lastName, bool employmentStatus, KeyChip keyChip, Department department)
         {
+            EmployeeId = employeeId;
             FirstName = firstName;
             LastName = lastName;
-            CPRNum = cPRNum;
-            PhoneNum = phoneNum;
-            Email = email;
-            Address = address;
-            EmploymentStatus = true;
             Department = department;
+            EmploymentStatus = employmentStatus;
+            KeyChip = keyChip;
+            Department = department;
+            count++; // for local Id simulations. We use it to assign correct ID's to newly added Employees.
+        }
+
+        // Constructor for adding new employee
+        public Employee(string firstName, string lastName, KeyChip keyChip, Department department)
+        {
+            EmployeeId = count;
+            FirstName = firstName;
+            LastName = lastName;
+            Department = department;
+            EmploymentStatus = true;
+            KeyChip = keyChip;
+            Department = department;
+            count++;
         }
     }
 }

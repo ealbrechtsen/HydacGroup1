@@ -19,8 +19,9 @@ namespace HydacApplication.ViewModel
 
         // VM Lists
         public ObservableCollection<EmployeeVM> employeesVM { get; set; }
+        public ObservableCollection<EmployeeVM> unemployedEmployeesVM { get; set; }
         public ObservableCollection<DepartmentVM> departmentsVM { get; set; }
-        public ObservableCollection<KeyChipVM> keyChipVM { get; set; }
+        public ObservableCollection<KeyChipVM> keyChipsVM { get; set; }
 
         // Implemented INotifyPropertyChanged
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -46,7 +47,7 @@ namespace HydacApplication.ViewModel
         }
         private KeyChipVM selectedKeyChip;
 
-        public KeyChipVM MyProperty
+        public KeyChipVM SelectedKeyChip
         {
             get { return selectedKeyChip; }
             set { selectedKeyChip = value; OnPropertyChanged("SelectedKeyChip"); }
@@ -57,15 +58,20 @@ namespace HydacApplication.ViewModel
         public MainViewModel() 
         {
             DepartmentRepo = new DepartmentRepository();
-            EmployeeRepo = new EmployeeRepository(DepartmentRepo);
+            KeyChipRepo = new KeyChipRepository();
+            EmployeeRepo = new EmployeeRepository(DepartmentRepo, KeyChipRepo);
             departmentsVM = new ObservableCollection<DepartmentVM>(DepartmentRepo.GetDepartments().Select(department => new DepartmentVM(department)));
-            employeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Select(employee => new EmployeeVM(employee)));
+            keyChipsVM = new ObservableCollection<KeyChipVM>(KeyChipRepo.GetKeyChips().Select(keyChip => new KeyChipVM(keyChip)));
+            employeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Where(employee => employee.EmploymentStatus = true)
+                                                                                          .Select(employee => new EmployeeVM(employee)));
+            unemployedEmployeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Where(employee => employee.EmploymentStatus = false)
+                                                                                                    .Select(employee => new EmployeeVM(employee)));
         }
 
         // Creates a new employee object, adds it to VM list, repo list and the database.
-        public void CreateEmployee(string firstName, string lastName, string cPRNum, string phoneNum, string email, string address, DepartmentVM department)
+        public void CreateEmployee(string firstName, string lastName, KeyChipVM keyChip, DepartmentVM department)
         {
-            Employee emp = new Employee(firstName, lastName, cPRNum, phoneNum, email, address, department.GetDepartment(DepartmentRepo));
+            Employee emp = new Employee(firstName, lastName, keyChip.GetKeyChip(KeyChipRepo), department.GetDepartment(DepartmentRepo));
             EmployeeRepo.Add(emp); // This method adds it both to repo and database.
             employeesVM.Add(new EmployeeVM(emp));
         }
@@ -76,6 +82,10 @@ namespace HydacApplication.ViewModel
             Department dpm = new Department(name);
             DepartmentRepo.Add(dpm); // This method adds it both to repo and database.
             departmentsVM.Add(new DepartmentVM(dpm));
+        }
+        public void CreateKeyChip()
+        {
+
         }
        
     }

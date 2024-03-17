@@ -12,11 +12,10 @@ namespace ModelPersistence.Persistence
     public class KeyChipRepository : IRepository<KeyChip>
     {
         private List<KeyChip> keyChips;
-        public KeyChipRepository(KeyChipRepository KeyChipRepo)
+        public KeyChipRepository()
         {
             // When the EmployeeRepository is instantiated, we take the Department repo and place it inside a field,
             // so we can use the functions in departmentrepo, to assign departments to employees.
-            KeyChipRepo = KeyChipRepo;
             // Next we instantiate the list and populate it with objekt from the database.
             keyChips = new List<KeyChip>();
             using (SqlConnection con = new SqlConnection(RepositoryHelper.connectionString))
@@ -27,7 +26,7 @@ namespace ModelPersistence.Persistence
                 {
                     while (reader.Read())
                     {
-                        KeyChip? keyChip = new KeyChip(int.Parse(reader["KeychipId"].ToString()));
+                        KeyChip? keyChip = new KeyChip(int.Parse(reader["KeyChipId"].ToString()));
                         if (keyChip == null)
                         {
                             Console.WriteLine("No KeyChipId found");

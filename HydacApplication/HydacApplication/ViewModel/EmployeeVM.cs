@@ -9,25 +9,20 @@ namespace HydacApplication.ViewModel
 {
     public class EmployeeVM
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string CPRNum { get; set; }
-        public string PhoneNum { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
-        public string Department { get; set; }
-        public int KeyChipId { get; set; }
+        public int EmployeeId;
+        public string FirstName;
+        public string LastName;
+        public KeyChip KeyChip { get; set; }
+        public Department Department { get; set; }
 
+        // Constructor for reading from database
         public EmployeeVM(Employee employee)
         {
+            EmployeeId = employee.EmployeeId;
             FirstName = employee.FirstName;
             LastName = employee.LastName;
-            CPRNum = employee.CPRNum;
-            PhoneNum = employee.PhoneNum;
-            Email = employee.Email;
-            Address = employee.Address;
-            Department = employee.Department.Name;
-            KeyChipId = employee.KeyChip.KeyChipId;
+            Department = employee.Department;
+            KeyChip = employee.KeyChip;
         }
     }
 }
