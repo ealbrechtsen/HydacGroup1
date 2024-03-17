@@ -15,10 +15,12 @@ namespace HydacApplication.ViewModel
         // Repositories
         private DepartmentRepository DepartmentRepo;
         private EmployeeRepository EmployeeRepo;
+        private KeyChipRepository KeyChipRepo;
 
         // VM Lists
         public ObservableCollection<EmployeeVM> employeesVM { get; set; }
         public ObservableCollection<DepartmentVM> departmentsVM { get; set; }
+        public ObservableCollection<KeyChipVM> keyChipVM { get; set; }
 
         // Implemented INotifyPropertyChanged
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -42,6 +44,14 @@ namespace HydacApplication.ViewModel
             get { return selectedDepartment; }
             set { selectedDepartment = value; OnPropertyChanged("SelectedEmployee"); }
         }
+        private KeyChipVM selectedKeyChip;
+
+        public KeyChipVM MyProperty
+        {
+            get { return selectedKeyChip; }
+            set { selectedKeyChip = value; OnPropertyChanged("SelectedKeyChip"); }
+        }
+
 
         // Instantiating MainViewModel, the following repos and populating the VM Lists.
         public MainViewModel() 
@@ -67,5 +77,6 @@ namespace HydacApplication.ViewModel
             DepartmentRepo.Add(dpm); // This method adds it both to repo and database.
             departmentsVM.Add(new DepartmentVM(dpm));
         }
+       
     }
 }

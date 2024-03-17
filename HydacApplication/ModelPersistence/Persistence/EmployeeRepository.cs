@@ -68,9 +68,14 @@ namespace ModelPersistence.Persistence
 
             }
         }
-        public List<Employee> GetEmployees() 
+        public Employee GetEmployee(string firstName)
         {
-            // Returns all employees.
+            // Returns a Employee with the given name.
+            return employees.Find(employee => employee.FirstName == firstName);
+        }
+        public List<Employee> GetEmployees()
+        {
+            // Returns the Department list.
             return employees;
         }
     }

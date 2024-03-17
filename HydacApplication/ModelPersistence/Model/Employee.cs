@@ -8,6 +8,7 @@ namespace ModelPersistence.Model
 {
     public class Employee
     {
+        public int EmployeeId { get; set; }
         public string FirstName;
         public string LastName;
         public string CPRNum;
@@ -16,6 +17,7 @@ namespace ModelPersistence.Model
         public string Address;
         public bool EmploymentStatus;
         public Department Department;
+        public KeyChip KeyChip;
         
         public Employee(string firstName, string lastName, string cPRNum, string phoneNum, string email, string address, Department department)
         {

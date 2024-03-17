@@ -16,6 +16,7 @@ namespace HydacApplication.ViewModel
         public string Email { get; set; }
         public string Address { get; set; }
         public string Department { get; set; }
+        public int KeyChipId { get; set; }
 
         public EmployeeVM(Employee employee)
         {
@@ -26,6 +27,7 @@ namespace HydacApplication.ViewModel
             Email = employee.Email;
             Address = employee.Address;
             Department = employee.Department.Name;
+            KeyChipId = employee.KeyChip.KeyChipId;
         }
     }
 }
