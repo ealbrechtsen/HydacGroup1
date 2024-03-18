@@ -28,7 +28,7 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2013</x>
+      <x>2057</x>
       <y>154</y>
       <w>264</w>
       <h>319</h>
@@ -59,7 +59,7 @@ fontsize=10
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1584</x>
+      <x>1628</x>
       <y>176</y>
       <w>330</w>
       <h>209</h>
@@ -74,13 +74,14 @@ fontsize=10
                                      keyChipRepo : KeyChipRepository)
 + Add(employee : Employee)
 + GetEmployee(firstName : string)
-+ GetEmployees()</panel_attributes>
++ GetEmployees()
++ UpdateStatus(employee : Employee)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>2068</x>
+      <x>2112</x>
       <y>0</y>
       <w>187</w>
       <h>66</h>
@@ -93,7 +94,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1628</x>
+      <x>1672</x>
       <y>0</y>
       <w>275</w>
       <h>77</h>
@@ -106,7 +107,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>1056</x>
+      <x>1100</x>
       <y>0</y>
       <w>264</w>
       <h>55</h>
@@ -119,7 +120,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>759</x>
+      <x>803</x>
       <y>66</y>
       <w>33</w>
       <h>1386</h>
@@ -130,7 +131,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>352</x>
+      <x>396</x>
       <y>0</y>
       <w>143</w>
       <h>66</h>
@@ -143,10 +144,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>836</x>
+      <x>880</x>
       <y>341</y>
       <w>319</w>
-      <h>275</h>
+      <h>286</h>
     </coordinates>
     <panel_attributes>MainViewModel : INotifyPropertyChanged
 --
@@ -168,13 +169,14 @@ style=wordwrap</panel_attributes>
                                keyChip : KeyChipVM
                                department : DepartmentVM)
 + CreateDepartment(name : string)
-+ CreateKeyChip(id : int)</panel_attributes>
++ CreateKeyChip(id : int)
++ SetStatus(employeeVM : EmployeeVM)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1628</x>
+      <x>1672</x>
       <y>495</y>
       <w>264</w>
       <h>209</h>
@@ -192,7 +194,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2024</x>
+      <x>2068</x>
       <y>550</y>
       <w>242</w>
       <h>154</h>
@@ -207,7 +209,7 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>88</x>
+      <x>132</x>
       <y>341</y>
       <w>231</w>
       <h>209</h>
@@ -218,13 +220,15 @@ lbEmployee : listBox
 btnNewEmployee : button
 btnNewDepartment : button
 btnNewKeyChip : button
-btnCloseProgram : button</panel_attributes>
+btnCloseProgram : button
+btnSetStatus : button
+btnSwitchList : button</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
+      <x>429</x>
       <y>341</y>
       <w>319</w>
       <h>209</h>
@@ -234,17 +238,21 @@ btnCloseProgram : button</panel_attributes>
 - mvm : MainViewModel
 - cmd : CreateEmployeeDialog
 - cdd : CreateDepartmentDialog
+- ckc : CreateKeyChipDialog
 --
 + MainView()
 - CreateDepartment_Click(object sender, RoutedEventArgs e)
 - CreateEmployee_Click(object sender, RoutedEventArgs e)
-- CloseProgram_Click(object sender, RoutedEventArgs e)</panel_attributes>
+- CreateKeyChip_Click(object sender, RoutedEventArgs e)
+- CloseProgram_Click(object sender, RoutedEventArgs e)
+- SetStatus_Click(object sender, RoutedEventArgs e)
+- SwitchList_Click(object sender, RoutedEventArgs e)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>88</x>
+      <x>132</x>
       <y>594</y>
       <w>231</w>
       <h>209</h>
@@ -259,7 +267,7 @@ btnCreateDepartment : button</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>88</x>
+      <x>132</x>
       <y>88</y>
       <w>231</w>
       <h>209</h>
@@ -277,7 +285,7 @@ btnCreateEmployee : button</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1903</x>
+      <x>1947</x>
       <y>275</y>
       <w>132</w>
       <h>33</h>
@@ -289,7 +297,7 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1881</x>
+      <x>1925</x>
       <y>583</y>
       <w>165</w>
       <h>33</h>
@@ -301,7 +309,7 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2134</x>
+      <x>2178</x>
       <y>462</y>
       <w>33</w>
       <h>110</h>
@@ -314,7 +322,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1177</x>
+      <x>1221</x>
       <y>176</y>
       <w>242</w>
       <h>176</h>
@@ -333,7 +341,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1177</x>
+      <x>1221</x>
       <y>539</y>
       <w>319</w>
       <h>154</h>
@@ -349,7 +357,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1144</x>
+      <x>1188</x>
       <y>374</y>
       <w>638</w>
       <h>77</h>
@@ -360,7 +368,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1144</x>
+      <x>1188</x>
       <y>440</y>
       <w>638</w>
       <h>77</h>
@@ -371,7 +379,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1144</x>
+      <x>1188</x>
       <y>341</y>
       <w>176</w>
       <h>66</h>
@@ -382,18 +390,18 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1144</x>
-      <y>495</y>
+      <x>1188</x>
+      <y>506</y>
       <w>176</w>
-      <h>66</h>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;10.0;140.0;40.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0;140.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
+      <x>737</x>
       <y>418</y>
       <w>165</w>
       <h>33</h>
@@ -404,7 +412,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
+      <x>352</x>
       <y>418</y>
       <w>99</w>
       <h>33</h>
@@ -415,7 +423,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
+      <x>352</x>
       <y>165</y>
       <w>99</w>
       <h>33</h>
@@ -426,7 +434,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
+      <x>352</x>
       <y>682</y>
       <w>99</w>
       <h>33</h>
@@ -437,7 +445,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
+      <x>429</x>
       <y>88</y>
       <w>319</w>
       <h>209</h>
@@ -454,7 +462,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
+      <x>429</x>
       <y>594</y>
       <w>319</w>
       <h>209</h>
@@ -471,7 +479,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>495</x>
+      <x>539</x>
       <y>286</y>
       <w>33</w>
       <h>77</h>
@@ -482,7 +490,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>495</x>
+      <x>539</x>
       <y>539</y>
       <w>33</w>
       <h>77</h>
@@ -493,7 +501,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1628</x>
+      <x>1672</x>
       <y>1243</y>
       <w>264</w>
       <h>209</h>
@@ -507,7 +515,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1551</x>
+      <x>1584</x>
       <y>66</y>
       <w>33</w>
       <h>1397</h>
@@ -518,7 +526,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1936</x>
+      <x>1980</x>
       <y>66</y>
       <w>33</w>
       <h>1364</h>
@@ -529,7 +537,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1628</x>
+      <x>1672</x>
       <y>737</y>
       <w>264</w>
       <h>209</h>
@@ -546,7 +554,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1628</x>
+      <x>1672</x>
       <y>979</y>
       <w>253</w>
       <h>209</h>
@@ -555,18 +563,16 @@ m2=1</panel_attributes>
 --
 - shifts : Shift [0..]
 --
-+ TimePeriodRepository()
++ ShiftRepository()
 + Add(shift : Shift)
-+ GetShift(firstName : string, 
-                 lastName : string
-                 date : DateOnly) : Shift
++ GetShift(employeeId : int) : Shift[0.*]
 + GetShifts() : Shift[0.*]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2013</x>
+      <x>2057</x>
       <y>737</y>
       <w>264</w>
       <h>209</h>
@@ -581,7 +587,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2013</x>
+      <x>2057</x>
       <y>979</y>
       <w>264</w>
       <h>209</h>
@@ -593,16 +599,16 @@ m2=1</panel_attributes>
 + CheckOutTime : TimeOnly
 + Date : DateOnly
 --
-+ TimePeriod(checkInTime : TimeOnly, 
-                       checkOutTime : TimeOnly
-                       Date : DateOnly)
++ Shift(checkInTime : TimeOnly, 
+            checkOutTime : TimeOnly
+            Date : DateOnly)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2266</x>
+      <x>2310</x>
       <y>363</y>
       <w>88</w>
       <h>473</h>
@@ -615,7 +621,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2266</x>
+      <x>2310</x>
       <y>319</y>
       <w>132</w>
       <h>803</h>
@@ -628,7 +634,7 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1881</x>
+      <x>1925</x>
       <y>803</y>
       <w>154</w>
       <h>33</h>
@@ -640,7 +646,7 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1870</x>
+      <x>1914</x>
       <y>1056</y>
       <w>165</w>
       <h>33</h>
@@ -652,7 +658,7 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
+      <x>429</x>
       <y>847</y>
       <w>319</w>
       <h>209</h>
@@ -669,7 +675,7 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
+      <x>737</x>
       <y>517</y>
       <w>55</w>
       <h>374</h>
@@ -680,7 +686,7 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>88</x>
+      <x>132</x>
       <y>847</y>
       <w>231</w>
       <h>209</h>
@@ -695,7 +701,7 @@ btnCreateKeyChip : button</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
+      <x>352</x>
       <y>924</y>
       <w>99</w>
       <h>33</h>
@@ -706,7 +712,7 @@ btnCreateKeyChip : button</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>836</x>
+      <x>880</x>
       <y>660</y>
       <w>319</w>
       <h>154</h>
@@ -722,23 +728,66 @@ btnCreateKeyChip : button</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>979</x>
-      <y>605</y>
+      <x>1023</x>
+      <y>616</y>
       <w>33</w>
-      <h>77</h>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1144</x>
+      <x>1188</x>
       <y>462</y>
       <w>506</w>
       <h>374</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;410.0;10.0;410.0;320.0;440.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1188</x>
+      <y>484</y>
+      <w>506</w>
+      <h>605</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;390.0;10.0;390.0;530.0;440.0;530.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>143</y>
+      <w>319</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>ShiftVM
+--
++ ShiftId : int
++ CheckInTime : TimeOnly
++ CheckOutTime : TimeOnly
++ Date : DateOnly
+--
++ ShiftVM(checkInTime : TimeOnly, 
+                 checkOutTime : TimeOnly
+                 Date : DateOnly)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1023</x>
+      <y>286</y>
+      <w>33</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
