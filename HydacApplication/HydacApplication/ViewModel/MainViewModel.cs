@@ -96,27 +96,22 @@ namespace HydacApplication.ViewModel
         // This method checks both employeeVM lists if the employee in the parameters are a match. If it is found and therefore not null(!=null) Then the if statement runs.
         public void SetStatus(EmployeeVM employeeVM) 
         {
-            // If employee was found in employeesVM, We take that employee into a field.
-            EmployeeVM emp = employeesVM.FirstOrDefault(emp => emp.EmployeeId == employeeVM.EmployeeId);
-            if (emp != null)
+            // If employeeVM was found in employeesVM.
+            if (employeesVM.FirstOrDefault(emp => emp.EmployeeId == employeeVM.EmployeeId) != null)
             {
                 // we remove that employee from the list.
-                employeesVM.Remove(emp);
-                // we switch its status
-                emp.EmploymentStatus = false;
+                employeesVM.Remove(employeeVM);
                 // then add it to the unemployedList
-                unemployedEmployeesVM.Add(emp);
+                unemployedEmployeesVM.Add(employeeVM);
                 // and we send the update along to the Repo list and Database.
-                EmployeeRepo.UpdateStatus(emp.GetEmployee(EmployeeRepo));
+                EmployeeRepo.UpdateStatus(employeeVM.GetEmployee(EmployeeRepo));
             }
             // This part does the same, just in reverse.
             else
             {
-                EmployeeVM uemp = unemployedEmployeesVM.FirstOrDefault(uemp => uemp.EmployeeId == employeeVM.EmployeeId);
-                unemployedEmployeesVM.Remove(uemp);
-                uemp.EmploymentStatus = true;
-                employeesVM.Add(uemp);
-                EmployeeRepo.UpdateStatus(uemp.GetEmployee(EmployeeRepo));
+                unemployedEmployeesVM.Remove(employeeVM);
+                employeesVM.Add(employeeVM);
+                EmployeeRepo.UpdateStatus(employeeVM.GetEmployee(EmployeeRepo));
             }
         }
     }
