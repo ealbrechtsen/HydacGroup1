@@ -8,9 +8,9 @@ namespace ModelPersistence.Model
 {
     public class KeyChip
     {
-        public int KeyChipId { get; set; }
+        public long KeyChipId { get; set; }
 
-        public KeyChip(int keyChipId)
+        public KeyChip(long keyChipId)
         {
             KeyChipId = keyChipId;
         }

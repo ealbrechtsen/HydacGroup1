@@ -13,7 +13,7 @@ using System.Net;
 
 namespace ModelPersistence.Persistence
 {
-    public class EmployeeRepository : IRepository<Employee>
+    public class EmployeeRepository
     {
         private List<Employee> employees;
         private DepartmentRepository departmentRepo;
@@ -56,26 +56,47 @@ namespace ModelPersistence.Persistence
             using(SqlConnection connection = new SqlConnection(RepositoryHelper.connectionString))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEE(FirstName, LastName, DepartmentName, EmploymentStatus, KeyChipId)"+ "VALUES(@FirstName, @LastName, @DepartmentName, EmploymentStatus, KeyChipId)", connection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO EMPLOYEE(FirstName, LastName, EmploymentStatus, DepartmentName, KeyChipId)" + "VALUES(@FirstName, @LastName, @EmploymentStatus, @DepartmentName, @KeyChipId)", connection);
                 cmd.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = employee.FirstName;
                 cmd.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = employee.LastName;
-                cmd.Parameters.Add("@DepartmentName", SqlDbType.NVarChar).Value = employee.Department.Name;
                 cmd.Parameters.Add("@EmploymentStatus", SqlDbType.Bit).Value = employee.EmploymentStatus;
+                cmd.Parameters.Add("@DepartmentName", SqlDbType.NVarChar).Value = employee.Department.Name;
                 cmd.Parameters.Add("@KeyChipId", SqlDbType.Int).Value = employee.KeyChip.KeyChipId;
                 cmd.ExecuteNonQuery();
                 employees.Add(employee);
 
             }
         }
-        public Employee GetEmployee(string firstName)
+        public Employee GetEmployee(int id)
         {
             // Returns a Employee with the given name.
-            return employees.Find(employee => employee.FirstName == firstName);
+            return employees.Find(employee => employee.EmployeeId == id);
         }
         public List<Employee> GetEmployees()
         {
             // Returns the Department list.
             return employees;
+        }
+        public void UpdateStatus(Employee employee) 
+        {
+            // Flips the status
+            employee.EmploymentStatus = employee.EmploymentStatus == true ? false : true;
+            // Finds the first object matching with the employeeId. Then sets that employee.EmploymentStatus to the new employees .employmentStatus.
+            // Only updates the local value in the list.
+            employees.FirstOrDefault(emp => emp.EmployeeId == employee.EmployeeId).EmploymentStatus = employee.EmploymentStatus;
+            // Next we update the Database
+            using(SqlConnection connection = new SqlConnection(RepositoryHelper.connectionString))
+            {
+                connection.Open();
+                // We use UPDATE table SET Column = @value WHERE column = @Value.
+                // We want to UPDATE EmploymentStatus to the employee from the method WHERE EmployeeID matches with the employee from the method.
+                SqlCommand cmd = new SqlCommand("UPDATE EMPLOYEE SET EmploymentStatus = @EmploymentStatus WHERE EmployeeId = @EmployeeId", connection);
+                // Here we push the local values into the command statement.
+                cmd.Parameters.Add("@EmployeeId", SqlDbType.Int).Value = employee.EmployeeId;
+                cmd.Parameters.Add("@EmploymentStatus", SqlDbType.Bit).Value = employee.EmploymentStatus;
+                // Then we execute the command.
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

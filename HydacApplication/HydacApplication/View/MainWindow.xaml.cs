@@ -18,20 +18,26 @@ namespace HydacApplication.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Fields for the different views and the current view.
         private CreateDepartmentDialog cdd;
         private CreateEmployeeDialog cmd;
-        private MainViewModel mvm;
+        private CreateKeyChipDialog ckc;
+        private MainViewModel mvm = new MainViewModel();
         public MainWindow()
         {
-            mvm = new MainViewModel();
-            this.DataContext = mvm;
+            DataContext = mvm;
             InitializeComponent();
+            // Content is not necessarily Strings, so we explicitly tells them they are strings in the code behind. Necessary for checks in SwitchList method.
+            SwitchList.Content = "Se Inaktive";
+            SetStatus.Content = "Sæt Inaktiv";
         }
 
 
         private void CreateDepartment_Click(object sender, RoutedEventArgs e)
         {
+            // Instantiates Department View
             cdd = new CreateDepartmentDialog(mvm);
+            // opens CreateDepartment View
             cdd.ShowDialog();
         }
 
@@ -40,10 +46,30 @@ namespace HydacApplication.View
             cmd = new CreateEmployeeDialog(mvm);
             cmd.ShowDialog();
         }
+        private void CreateKeyChip_Click(object sender, RoutedEventArgs e)
+        {
+            ckc = new CreateKeyChipDialog(mvm);
+            ckc.ShowDialog();
+        }
+        private void SetStatus_Click(object sender, RoutedEventArgs e)
+        {
+            // Flips the status of the selected employee. Throwing them into the correct List and updates it in the repo and database.
+            mvm.SetStatus(mvm.SelectedEmployee);
+        }
+        private void SwitchList_Click(object sender, RoutedEventArgs e)
+        {
+            // Switches between the lists depicting active and inactive employees. Updates several labels in the UI and rebinds the ItemsSource.
+            SwitchList.Content = SwitchList.Content == "Se Inaktive" ? "Se Aktive" : "Se Inaktive";
+            lvEmployees.ItemsSource = SwitchList.Content == "Se Inaktive" ? mvm.unemployedEmployeesVM : mvm.employeesVM; 
+            SetStatus.Content = SetStatus.Content == "Sæt Inaktiv" ? "Sæt Aktiv" : "Sæt Inaktiv";
+            txtTitle.Text = txtTitle.Text == "Aktive Medarbejdere" ? "Inaktive Medarbejdere" : "Aktive Medarbejdere";
+        }
 
         private void CloseProgram_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
     }
+
 }

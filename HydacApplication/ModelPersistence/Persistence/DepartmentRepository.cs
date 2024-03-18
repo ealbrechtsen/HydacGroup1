@@ -13,7 +13,7 @@ using ModelPersistence.Model;
 
 namespace ModelPersistence.Persistence
 {
-    public class DepartmentRepository : IRepository<Department>
+    public class DepartmentRepository
     {
         private List<Department> departments = new List<Department>();
 

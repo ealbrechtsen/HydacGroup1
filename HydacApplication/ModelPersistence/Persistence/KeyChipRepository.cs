@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ModelPersistence.Persistence
 {
-    public class KeyChipRepository : IRepository<KeyChip>
+    public class KeyChipRepository
     {
         private List<KeyChip> keyChips;
         public KeyChipRepository()
@@ -43,13 +43,14 @@ namespace ModelPersistence.Persistence
             {
                 connection.Open();
                 SqlCommand cmd = new SqlCommand("INSERT INTO KEYCHIP(KeyChipId)" + "VALUES(@KeyChipId)", connection);
-                cmd.Parameters.Add("@KeyChipId", SqlDbType.Int).Value = keyChip.KeyChipId;
+                cmd.Parameters.Add("@KeyChipId", SqlDbType.BigInt).Value = keyChip.KeyChipId;
                 cmd.ExecuteNonQuery();
                 keyChips.Add(keyChip);
             }
         }
-        public KeyChip GetKeyChip(int keyChipId)
+        public KeyChip GetKeyChip(long keyChipId)
         {
+            // Returns the keychip where the ID's Match
             return keyChips.Find(keyChip => keyChip.KeyChipId == keyChipId);
         }
         public List<KeyChip> GetKeyChips()

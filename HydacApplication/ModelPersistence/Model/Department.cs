@@ -8,7 +8,7 @@ namespace ModelPersistence.Model
 {
     public class Department
     {
-        public string Name;
+        public string Name { get; set; }
         
 
         public Department(string Name) 

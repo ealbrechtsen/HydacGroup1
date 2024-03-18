@@ -15,7 +15,7 @@ namespace HydacApplication.ViewModel
         {
             Name = department.Name;
         }
-        public Department GetDepartment(DepartmentRepository repo)
+        public Department GetDepartment(DepartmentRepository repo) // uses the repository to get the original non vm object, based on the Name of the current Vm object.
         {
             return repo.GetDepartment(Name);
         }

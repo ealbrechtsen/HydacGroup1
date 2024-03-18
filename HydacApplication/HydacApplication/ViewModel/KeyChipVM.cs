@@ -10,24 +10,14 @@ namespace HydacApplication.ViewModel
 {
     public class KeyChipVM
     {
-        public int KeyChipId { get; set; }
+        public long KeyChipId { get; set; }
         public KeyChipVM(KeyChip keyChip)
         {
             KeyChipId = keyChip.KeyChipId;
         }
-        public KeyChip GetKeyChip(KeyChipRepository repo)
+        public KeyChip GetKeyChip(KeyChipRepository repo) // uses the repository to get the original non vm object, based on the Id of the current Vm object.
         {
             return repo.GetKeyChip(KeyChipId);
         }
-
-        //public string Name { get; set; }
-        //public DepartmentVM(Department department)
-        //{
-        //    Name = department.Name;
-        //}
-        //public Department GetDepartment(DepartmentRepository repo)
-        //{
-        //    return repo.GetDepartment(Name);
-        //}
     }
 }

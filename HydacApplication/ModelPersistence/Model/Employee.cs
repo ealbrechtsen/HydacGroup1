@@ -14,9 +14,9 @@ namespace ModelPersistence.Model
         public bool EmploymentStatus {  get; set; }
         public KeyChip KeyChip { get; set; }
         public Department Department { get; set; }
-        private int count = 1;
+        private int count = 1; // Simulates auto incrementation of Database, so newly added employees have correct corrosponding EmployeeId's
         
-        // Constructor for reading from database
+        // Constructor for adding already existing employees read from the database
         public Employee(int employeeId, string firstName, string lastName, bool employmentStatus, KeyChip keyChip, Department department)
         {
             EmployeeId = employeeId;
@@ -26,20 +26,20 @@ namespace ModelPersistence.Model
             EmploymentStatus = employmentStatus;
             KeyChip = keyChip;
             Department = department;
-            count++; // for local Id simulations. We use it to assign correct ID's to newly added Employees.
+            count++; // increments based on number of employees added from database.
         }
 
-        // Constructor for adding new employee
+        // Constructor for adding new employees
         public Employee(string firstName, string lastName, KeyChip keyChip, Department department)
         {
-            EmployeeId = count;
+            EmployeeId = count; // uses the auto increment field to set the correct Id count for the next added employee.
             FirstName = firstName;
             LastName = lastName;
             Department = department;
             EmploymentStatus = true;
             KeyChip = keyChip;
             Department = department;
-            count++;
+            count++; // increments based on number of new employees added.
         }
     }
 }

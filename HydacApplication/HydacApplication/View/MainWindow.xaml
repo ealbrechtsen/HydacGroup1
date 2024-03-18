@@ -16,7 +16,10 @@
         <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
             <Button x:Name="CreateEmployee" Content="Opret Medarbejder" Margin="0 5 0 5" Click="CreateEmployee_Click" />
             <Button x:Name="CreateDepartment" Content="Opret Afdeling" Margin="0 5 0 5" Click="CreateDepartment_Click" />
-            <Button x:Name="CloseProgram" Content="Luk" Margin="0 350 0 5" Click="CloseProgram_Click"/>
+            <Button x:Name="CreateKeyChip" Content="Opret Nøglebrik" Margin="0 5 0 5" Click="CreateKeyChip_Click"/>
+            <Button x:Name="SetStatus" Content="Sæt Inaktiv" Margin="0 5 0 5" Click="SetStatus_Click"/>
+            <Button x:Name="SwitchList" Content="Se Inaktive" Margin="0 5 0 5" Click="SwitchList_Click"/>
+            <Button x:Name="CloseProgram" Content="Luk" Margin="0 260 0 5" Click="CloseProgram_Click"/>
         </StackPanel>
 
         <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
@@ -27,18 +30,15 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             
-            <TextBlock Grid.Row="0" Text="Medarbejdere" Margin="10" FontSize="18"/>
+            <TextBlock x:Name="txtTitle" Grid.Row="0" Text="Aktive Medarbejdere" Margin="10" FontSize="18"/>
 
-            <ListView Grid.Row="0" Margin="5,35,5,0" BorderBrush="Gray" BorderThickness="1" ItemsSource="{Binding employeesVM}" SelectedItem="{Binding SelectedEmployee}">
+            <ListView x:Name="lvEmployees" Grid.Row="0" Margin="5,35,5,0" BorderBrush="Gray" BorderThickness="1" SelectedItem="{Binding SelectedEmployee}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Fornavn" Width="100" DisplayMemberBinding="{Binding FirstName}"/>
                         <GridViewColumn Header="Efternavn" Width="100" DisplayMemberBinding="{Binding LastName}"/>
-                        <GridViewColumn Header="CPR" Width="100" DisplayMemberBinding="{Binding CPRNum}"/>
-                        <GridViewColumn Header="Telefon" Width="100" DisplayMemberBinding="{Binding PhoneNum}"/>
-                        <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding Email}"/>
-                        <GridViewColumn Header="Adresse" Width="100" DisplayMemberBinding="{Binding Address}"/>
-                        <GridViewColumn Header="Afdeling" Width="100" DisplayMemberBinding="{Binding Department}"/>
+                        <GridViewColumn Header="Nøglebrik" Width="100" DisplayMemberBinding="{Binding KeyChip.KeyChipId}"/>
+                        <GridViewColumn Header="Afdeling" Width="100" DisplayMemberBinding="{Binding Department.Name}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

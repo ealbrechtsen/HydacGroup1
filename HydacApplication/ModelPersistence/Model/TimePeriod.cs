@@ -11,13 +11,13 @@ namespace ModelPersistence.Model
         public int TimePeriodId { get; set; }
         public TimeOnly CheckInTime { get; set; }
         public TimeOnly? CheckOutTime { get; set; }
-        public BusinessDay BusinessDay { get; set; }
+        public DateOnly Date {  get; set; }
 
-        public TimePeriod(TimeOnly checkInTime, TimeOnly checkOutTime, BusinessDay businessDay)
+        public TimePeriod(TimeOnly checkInTime, TimeOnly checkOutTime, DateOnly date)
         {
             CheckInTime = checkInTime;
             CheckOutTime = checkOutTime;
-            BusinessDay = businessDay;
+            Date = date;
         }
     }
 }
