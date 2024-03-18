@@ -22,14 +22,16 @@ namespace HydacApplication.View
         private CreateDepartmentDialog cdd;
         private CreateEmployeeDialog cmd;
         private CreateKeyChipDialog ckc;
-        private MainViewModel mvm = new MainViewModel();
+        private MainViewModel mvm;
         public MainWindow()
         {
+            mvm = new MainViewModel();
             DataContext = mvm;
             InitializeComponent();
             // Content is not necessarily Strings, so we explicitly tells them they are strings in the code behind. Necessary for checks in SwitchList method.
             SwitchList.Content = "Se Inaktive";
             SetStatus.Content = "Sæt Inaktiv";
+            lvEmployees.ItemsSource = mvm.employeesVM;
         }
 
 
@@ -59,8 +61,8 @@ namespace HydacApplication.View
         private void SwitchList_Click(object sender, RoutedEventArgs e)
         {
             // Switches between the lists depicting active and inactive employees. Updates several labels in the UI and rebinds the ItemsSource.
-            SwitchList.Content = SwitchList.Content == "Se Inaktive" ? "Se Aktive" : "Se Inaktive";
             lvEmployees.ItemsSource = SwitchList.Content == "Se Inaktive" ? mvm.unemployedEmployeesVM : mvm.employeesVM; 
+            SwitchList.Content = SwitchList.Content == "Se Inaktive" ? "Se Aktive" : "Se Inaktive";
             SetStatus.Content = SetStatus.Content == "Sæt Inaktiv" ? "Sæt Aktiv" : "Sæt Inaktiv";
             txtTitle.Text = txtTitle.Text == "Aktive Medarbejdere" ? "Inaktive Medarbejdere" : "Aktive Medarbejdere";
         }

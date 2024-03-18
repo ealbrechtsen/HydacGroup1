@@ -62,11 +62,11 @@ namespace HydacApplication.ViewModel
             KeyChipRepo = new KeyChipRepository();
             EmployeeRepo = new EmployeeRepository(DepartmentRepo, KeyChipRepo); // EmployeeRepo needs both department and keychip repo exist first and to instantiate,
                                                                                 // because employeeRepo uses functions inside both to associatie the objects to an employee. 
-            departmentsVM = new ObservableCollection<DepartmentVM>(DepartmentRepo.GetDepartments().Select(department => new DepartmentVM(department))); //Inside Select query, immidiately casts them into VM versions to populate the VM list with.
+            departmentsVM = new ObservableCollection<DepartmentVM>(DepartmentRepo.GetDepartments().Select(department => new DepartmentVM(department))); //Inside Select query, immediately casts them into VM versions to populate the VM list with.
             keyChipsVM = new ObservableCollection<KeyChipVM>(KeyChipRepo.GetKeyChips().Select(keyChip => new KeyChipVM(keyChip)));
-            employeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Where(employee => employee.EmploymentStatus = true) // uses .Where to only Select and Cast objects that matches the condition.
+            employeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Where(employee => employee.EmploymentStatus == true) // uses .Where to only Select and Cast objects that matches the condition.
                                                                                           .Select(employee => new EmployeeVM(employee)));
-            unemployedEmployeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Where(employee => employee.EmploymentStatus = false) // this list is for deactivated employees.
+            unemployedEmployeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Where(employee => employee.EmploymentStatus == false) // this list is for deactivated employees.
                                                                                                     .Select(employee => new EmployeeVM(employee)));
         }
 
