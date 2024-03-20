@@ -11,9 +11,9 @@ namespace ModelPersistence.Model
         public int EmployeeId;
         public string FirstName;
         public string LastName;
-        public bool EmploymentStatus {  get; set; }
-        public KeyChip KeyChip { get; set; }
-        public Department Department { get; set; }
+        public bool EmploymentStatus;
+        public KeyChip KeyChip;
+        public Department Department;
         private int count = 1; // Simulates auto incrementation of Database, so newly added employees have correct corrosponding EmployeeId's
         
         // Constructor for adding already existing employees read from the database

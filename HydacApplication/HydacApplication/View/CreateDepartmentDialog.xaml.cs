@@ -30,8 +30,8 @@ namespace HydacApplication.View
 
         private void CreateDepartment_Click(object sender, RoutedEventArgs e)
         {
-            mvm.CreateDepartment(txtDepartmentName.Text);
-            this.DialogResult = true;
+            string result = mvm.CreateDepartment(txtDepartmentName.Text);
+            lblMessage.Content = result;
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)

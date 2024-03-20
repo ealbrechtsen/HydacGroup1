@@ -41,7 +41,7 @@ namespace ModelPersistence.Persistence
                             reader["FirstName"].ToString(),
                             reader["LastName"].ToString(),
                             bool.Parse(reader["EmploymentStatus"].ToString()),
-                            this.keyChipRepo.GetKeyChip(int.Parse(reader["KeyChipId"].ToString())),
+                            this.keyChipRepo.GetKeyChip(long.Parse(reader["KeyChipId"].ToString())),
                             // Here we use the departmentrepo to get a department objekt and assign it to the employee instead of just the name of the department.
                             this.departmentRepo.GetDepartment(reader["DepartmentName"].ToString())
                         );
@@ -61,7 +61,7 @@ namespace ModelPersistence.Persistence
                 cmd.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = employee.LastName;
                 cmd.Parameters.Add("@EmploymentStatus", SqlDbType.Bit).Value = employee.EmploymentStatus;
                 cmd.Parameters.Add("@DepartmentName", SqlDbType.NVarChar).Value = employee.Department.Name;
-                cmd.Parameters.Add("@KeyChipId", SqlDbType.Int).Value = employee.KeyChip.KeyChipId;
+                cmd.Parameters.Add("@KeyChipId", SqlDbType.BigInt).Value = employee.KeyChip.KeyChipId;
                 cmd.ExecuteNonQuery();
                 employees.Add(employee);
 

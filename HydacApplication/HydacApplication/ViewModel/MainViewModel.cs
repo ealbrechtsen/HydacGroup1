@@ -17,12 +17,15 @@ namespace HydacApplication.ViewModel
         private DepartmentRepository DepartmentRepo;
         private EmployeeRepository EmployeeRepo;
         private KeyChipRepository KeyChipRepo;
+        private ShiftRepository ShiftRepo;
 
         // VM Lists
         public ObservableCollection<EmployeeVM> employeesVM { get; set; }
         public ObservableCollection<EmployeeVM> unemployedEmployeesVM { get; set; } // For inaktive employees
         public ObservableCollection<DepartmentVM> departmentsVM { get; set; }
         public ObservableCollection<KeyChipVM> keyChipsVM { get; set; }
+        public ObservableCollection<KeyChipVM> keyChipsInUseVM { get; set; }
+        private ObservableCollection<ShiftVM> shiftsVM;
 
         // Implemented INotifyPropertyChanged
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -31,13 +34,32 @@ namespace HydacApplication.ViewModel
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(name));
         }
+        public ObservableCollection<ShiftVM> ShiftsVM 
+        {
+            get {  return shiftsVM; }
+            set 
+            {
+                shiftsVM = value;
+                OnPropertyChanged("ShiftsVM");
+            }
+        }
+
 
         // Selected Objects from the Views
         private EmployeeVM selectedEmployee; // Currently used to change an employees status from the listviews.
         public EmployeeVM SelectedEmployee
         {
             get { return selectedEmployee; }
-            set { selectedEmployee = value; OnPropertyChanged("SelectedEmployee"); }
+            set 
+            { 
+                selectedEmployee = value; 
+                OnPropertyChanged("SelectedEmployee");
+                if (value != null) 
+                {
+                    ShiftsVM = new ObservableCollection<ShiftVM>(ShiftRepo.GetShifts(value.EmployeeId).Select(shift => new ShiftVM(shift)));
+
+                }
+            }
         }
         private DepartmentVM selectedDepartment; // Used to apply selected employee from Combo Box to a new employee instance.
 
@@ -60,14 +82,17 @@ namespace HydacApplication.ViewModel
         {
             DepartmentRepo = new DepartmentRepository();
             KeyChipRepo = new KeyChipRepository();
+            ShiftRepo = new ShiftRepository();
             EmployeeRepo = new EmployeeRepository(DepartmentRepo, KeyChipRepo); // EmployeeRepo needs both department and keychip repo exist first and to instantiate,
                                                                                 // because employeeRepo uses functions inside both to associatie the objects to an employee. 
             departmentsVM = new ObservableCollection<DepartmentVM>(DepartmentRepo.GetDepartments().Select(department => new DepartmentVM(department))); //Inside Select query, immediately casts them into VM versions to populate the VM list with.
-            keyChipsVM = new ObservableCollection<KeyChipVM>(KeyChipRepo.GetKeyChips().Select(keyChip => new KeyChipVM(keyChip)));
+            keyChipsVM = new ObservableCollection<KeyChipVM>(KeyChipRepo.GetKeyChips().Where(keyChip => keyChip.InUse == false).Select(keyChip => new KeyChipVM(keyChip)));
+            keyChipsInUseVM = new ObservableCollection<KeyChipVM>(KeyChipRepo.GetKeyChips().Where(keyChip => keyChip.InUse == true).Select(keyChip => new KeyChipVM(keyChip)));
             employeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Where(employee => employee.EmploymentStatus == true) // uses .Where to only Select and Cast objects that matches the condition.
                                                                                           .Select(employee => new EmployeeVM(employee)));
             unemployedEmployeesVM = new ObservableCollection<EmployeeVM>(EmployeeRepo.GetEmployees().Where(employee => employee.EmploymentStatus == false) // this list is for deactivated employees.
                                                                                                     .Select(employee => new EmployeeVM(employee)));
+            ShiftsVM = new ObservableCollection<ShiftVM>();
         }
 
         // Creates a new employee object, adds it to VM list, repo list and the database.
@@ -79,11 +104,17 @@ namespace HydacApplication.ViewModel
         }
 
         // Creates a new department object, adds it to VM list, repo list and the database.
-        public void CreateDepartment(string name)
+        public string CreateDepartment(string name)
         {
-            Department dpm = new Department(name);
-            DepartmentRepo.Add(dpm); // This method adds it both to repo and database.
-            departmentsVM.Add(new DepartmentVM(dpm));
+            string result = "Afdeling eksistere";
+            if (departmentsVM.FirstOrDefault(department => department.Name == name) == null)
+            {
+                Department dpm = new Department(name);
+                DepartmentRepo.Add(dpm); // This method adds it both to repo and database.
+                departmentsVM.Add(new DepartmentVM(dpm));
+                result = "Afdeling tilføjet";
+            }
+            return result;
         }
         // Creates a new KeyChip object, adds it to VM list, repo list and the database.
         public void CreateKeyChip(long id)
@@ -112,6 +143,26 @@ namespace HydacApplication.ViewModel
                 unemployedEmployeesVM.Remove(employeeVM);
                 employeesVM.Add(employeeVM);
                 EmployeeRepo.UpdateStatus(employeeVM.GetEmployee(EmployeeRepo));
+            }
+        }
+        public void SetStatus(KeyChipVM keyChipVM)
+        {
+            // If employeeVM was found in employeesVM.
+            if (keyChipsVM.FirstOrDefault(kc => kc.InUse == keyChipVM.InUse) != null)
+            {
+                // we remove that employee from the list.
+                keyChipsVM.Remove(keyChipVM);
+                // then add it to the unemployedList
+                keyChipsInUseVM.Add(keyChipVM);
+                // and we send the update along to the Repo list and Database.
+                KeyChipRepo.UpdateStatus(keyChipVM.GetKeyChip(KeyChipRepo));
+            }
+            // This part does the same, just in reverse.
+            else
+            {
+                keyChipsInUseVM.Remove(keyChipVM);
+                keyChipsVM.Add(keyChipVM);
+                KeyChipRepo.UpdateStatus(keyChipVM.GetKeyChip(KeyChipRepo));
             }
         }
     }

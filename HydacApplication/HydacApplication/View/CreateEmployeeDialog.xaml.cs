@@ -30,6 +30,7 @@ namespace HydacApplication.View
         private void CreateEmployee_Click(object sender, RoutedEventArgs e)
         {
             mvm.CreateEmployee(txtFirstName.Text, txtLastName.Text, mvm.SelectedKeyChip, mvm.SelectedDepartment);
+            mvm.SetStatus(mvm.SelectedKeyChip);
             this.DialogResult = true;
         }
 

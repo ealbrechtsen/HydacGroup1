@@ -31,7 +31,7 @@ namespace HydacApplication.View
 
         private void CreateKeyChip_Click(object sender, RoutedEventArgs e)
         {
-            mvm.CreateKeyChip(int.Parse(txtNøglebrikId.Text));
+            mvm.CreateKeyChip(long.Parse(txtNøglebrikId.Text));
             DialogResult = true;
         }
 

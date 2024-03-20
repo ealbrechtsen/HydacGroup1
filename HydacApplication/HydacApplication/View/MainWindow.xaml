@@ -26,19 +26,39 @@
 
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!-- Title Row -->
                 <RowDefinition Height="*" />
+                <!-- First ListView Row -->
                 <RowDefinition Height="*" />
+                <!-- Second ListView Row -->
             </Grid.RowDefinitions>
-            
+
+            <!-- Title for First ListView -->
             <TextBlock x:Name="txtTitle" Grid.Row="0" Text="Aktive Medarbejdere" Margin="10" FontSize="18"/>
 
-            <ListView x:Name="lvEmployees" Grid.Row="0" Margin="5,35,5,0" BorderBrush="Gray" BorderThickness="1" SelectedItem="{Binding SelectedEmployee}">
+            <!-- First ListView -->
+            <ListView x:Name="lvEmployees" HorizontalContentAlignment="Center" Grid.Row="1" Margin="5,5,5,10" BorderBrush="Gray" BorderThickness="1" SelectedItem="{Binding SelectedEmployee}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Fornavn" Width="100" DisplayMemberBinding="{Binding FirstName}"/>
-                        <GridViewColumn Header="Efternavn" Width="100" DisplayMemberBinding="{Binding LastName}"/>
-                        <GridViewColumn Header="Nøglebrik" Width="100" DisplayMemberBinding="{Binding KeyChip.KeyChipId}"/>
-                        <GridViewColumn Header="Afdeling" Width="100" DisplayMemberBinding="{Binding Department.Name}"/>
+                        <GridViewColumn Header="Fornavn" Width="120" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="Efternavn" Width="120" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="Nøglebrik" Width="120" DisplayMemberBinding="{Binding KeyChip.KeyChipId}"/>
+                        <GridViewColumn Header="Afdeling" Width="120" DisplayMemberBinding="{Binding Department.Name}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <!-- Title for Second ListView -->
+            <TextBlock Grid.Row="2" Text="Vagter" Margin="10 -5" FontSize="18"/>
+
+            <!-- Second ListView -->
+            <ListView Grid.Row="3" Margin="5,20,5,5" BorderBrush="Gray" BorderThickness="1" ItemsSource="{Binding ShiftsVM}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Dato" Width="100" DisplayMemberBinding="{Binding Date}"/>
+                        <GridViewColumn Header="Indtjek" Width="100" DisplayMemberBinding="{Binding CheckInTime}"/>
+                        <GridViewColumn Header="Udtjek" Width="100" DisplayMemberBinding="{Binding CheckOutTime}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

@@ -45,6 +45,7 @@ namespace HydacApplication.View
 
         private void CreateEmployee_Click(object sender, RoutedEventArgs e)
         {
+            mvm.SelectedDepartment = null;
             cmd = new CreateEmployeeDialog(mvm);
             cmd.ShowDialog();
         }
@@ -57,6 +58,7 @@ namespace HydacApplication.View
         {
             // Flips the status of the selected employee. Throwing them into the correct List and updates it in the repo and database.
             mvm.SetStatus(mvm.SelectedEmployee);
+            mvm.ShiftsVM.Clear();
         }
         private void SwitchList_Click(object sender, RoutedEventArgs e)
         {

@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HydacApplication.View"
         mc:Ignorable="d"
-        Title="CreateDepartmentDialog" Height="150" Width="300">
+       Title="CreateDepartmentDialog" Height="160" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <!-- New row for the label -->
         </Grid.RowDefinitions>
 
         <Label Content="Navngiv Afdeling" Grid.Row="0" Margin="5"/>
@@ -20,5 +22,7 @@
             <Button x:Name="CreateDepartment" Content="Opret" Width="100" Margin="5" Click="CreateDepartment_Click"/>
             <Button x:Name="Return" Content="Tilbage" Width="100" Margin="5" Click="Return_Click"/>
         </StackPanel>
+
+        <Label x:Name="lblMessage" Grid.Row="3" HorizontalContentAlignment="Center" Foreground="Green" HorizontalAlignment="Center" Margin="-10" Width="250"/>
     </Grid>
 </Window>
